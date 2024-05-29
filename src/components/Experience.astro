@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "May 2022 - Aug 2024",
+    title: "Data Engineer",
+    company: "LOU Legumes",
+    description:
+      "Encargado del diseño, creación y optimización de bases de datos. Responsable del desarrollo de software y herramientas que permitieron transformar los datos en información valiosa y accesible para personas de diferentes servicios.",
+    link: "",
+  },
+  {
+    date: "Dec 2021 - May 2022",
+    title: "Data Analyst",
+    company: "LOU Legumes",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+        
+      </li>
+    ))
+  }
+</ol>

@@ -1,20 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
 import Badge from "../components/Badge.astro";
+import LinkedIn from "../components/icons/Linkedin.astro"
+import Github from "../components/icons/Github.astro"
+import GroupIcons from "../components/icons/GroupIcons.astro"
+import Gmail from "../components/icons/Gmail.astro"
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import LaptopIcon from "../components/icons/Laptop.astro";
+
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout 
+	title="CV Daniel Perez - Data Engineer, Software Développeur  avec 3 ans d'expérience"
+	description="Embauchez Daniel pour gérer vos bases de données et créer des applications qui mettent les données à la disposition de vos utilisateurs."
+>
 	<main>	
-		<section class = "w-full lg:w-[540px] mx-auto py-40">
+		<SectionContainer class="py-40 pb-20">
 			<img 
-				class="rounded-lg w-40 h-40 object-cover mb-5"
+				class="rounded-lg size-40 object-cover mb-5"
 				src="https://media.licdn.com/dms/image/C4E03AQFs4SxZDyVWbA/profile-displayphoto-shrink_800_800/0/1658314105636?e=1722470400&v=beta&t=xnEpibOwL8PH4wqzo2g99EU5w1WXMaU7PyCpp0bCSE8" 
 				alt="dani" 
 			/>
-			<h1 class="text-white text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">Hola, soy Dani
+			<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-4">Hola, soy Dani
 				<a 
 					href="https://www.linkedin.com/in/dan-prz/" 
 					target="_blank"
@@ -23,13 +31,33 @@ import Badge from "../components/Badge.astro";
 				<Badge>Open to work</Badge>
 			</a>
 			</h1>
-			<h2 class = "text-lg opacity-95">
-			+3 anos de experiencia. Ingeniero de datos y desarrollador de aplicaciones data-driven
+			<h2 class = "text-lg opacity-95 text-wrap">
+			 <span>+3 anos de experiencia.</span> 
+			 <span class="text-green-800 dark:text-green-200/90 font-semibold">Ingeniero de datos y desarrollador</span> 
+			 <span>de aplicaciones data-driven</span>
 			</h2>
-			<ul>
-
-			</ul>
-		</section>
+			<nav class="flex gap-x-2 mt-6">
+				<GroupIcons href="https://www.linkedin.com/in/dan-prz/">
+					<LinkedIn class = "size-6"></LinkedIn>
+					LinkedIn
+				</GroupIcons>
+				<GroupIcons href="https://github.com/Danprz/">
+					<Github class = "size-6"></Github>
+					Github
+				</GroupIcons>
+				<GroupIcons  >
+					<Gmail class = "size-6"></Gmail>
+					danprz.dev@gmail.com
+				</GroupIcons>
+			</nav>		
+		</SectionContainer>
+		<SectionContainer id = "experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<LaptopIcon class ="size-9"/>
+				Experiencia Laboral :</h2>
+			<Experience>
+			</Experience>
+		</SectionContainer>
 	</main>
 </Layout>
 
