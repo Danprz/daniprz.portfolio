@@ -1,26 +1,108 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
 
-interface Props {
-  title: string;
-}
+const navItems = [
 
-const { title } = Astro.props;
+  {
+    title: "Inicio",
+    label: "inicio",
+    url: "./",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Tech",
+    label: "habilidade",
+    url: "/#habilidades",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  }
+]
 
 
 ---
 
-<header class = "flex justify-center items-center py-6 w-[1120px] mx-auto" > 
-    <span>
 
-    </span>
+<header class = "fixed top-0 z-10 flex items-center justify-center py-6 w-full mx-auto mt-2" > 
+  <span>
     
-    <nav class="flex flex-row gap-x-12 opacity-95">
-        <a href="#top">Inicio</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#sobre-mi">Sobre mi</a>
-        <a href="#habilidades">Tech</a>
-        <ThemeToggle></ThemeToggle>
+  </span>
 
-    </nav>
+  <nav
+  class="flex gap-x-8 font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+>
+  {
+    navItems.map((link) => (
+      <a
+        class="relative block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"  
+        aria-label={link.label}
+        href={link.url}
+      >
+        {link.title}
+      </a>
+    ))
+  }
+  <ThemeToggle />
+</nav>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-yellow-500")
+            } else {
+              item.classList.remove("text-yellow-500")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-white/10  bg-white/50 ring-white/10;
+    }
+  }
+</style>

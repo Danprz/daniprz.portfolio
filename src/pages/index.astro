@@ -8,6 +8,8 @@ import Gmail from "../components/icons/Gmail.astro"
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience.astro";
 import LaptopIcon from "../components/icons/Laptop.astro";
+import BrainIcon from "../components/icons/Brain.astro";
+import Skills from "../components/Skills.astro";
 
 ---
 
@@ -15,14 +17,14 @@ import LaptopIcon from "../components/icons/Laptop.astro";
 	title="CV Daniel Perez - Data Engineer, Software Développeur  avec 3 ans d'expérience"
 	description="Embauchez Daniel pour gérer vos bases de données et créer des applications qui mettent les données à la disposition de vos utilisateurs."
 >
-	<main>	
-		<SectionContainer class="py-40 pb-20">
+	<main class="px-4">	
+		<SectionContainer class="py-40 pb-32">
 			<img 
 				class="rounded-lg size-40 object-cover mb-5"
 				src="https://media.licdn.com/dms/image/C4E03AQFs4SxZDyVWbA/profile-displayphoto-shrink_800_800/0/1658314105636?e=1722470400&v=beta&t=xnEpibOwL8PH4wqzo2g99EU5w1WXMaU7PyCpp0bCSE8" 
 				alt="dani" 
 			/>
-			<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-4">Hola, soy Dani
+			<h1 class="text-2xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola, soy Dani
 				<a 
 					href="https://www.linkedin.com/in/dan-prz/" 
 					target="_blank"
@@ -31,32 +33,42 @@ import LaptopIcon from "../components/icons/Laptop.astro";
 				<Badge>Open to work</Badge>
 			</a>
 			</h1>
-			<h2 class = "text-lg opacity-95 text-wrap">
+			<h2 class = "text-xl lg:text-2xl opacity-95 text-wrap max-w-[700px]">
 			 <span>+3 anos de experiencia.</span> 
 			 <span class="text-green-800 dark:text-green-200/90 font-semibold">Ingeniero de datos y desarrollador</span> 
 			 <span>de aplicaciones data-driven</span>
 			</h2>
 			<nav class="flex gap-x-2 mt-6">
 				<GroupIcons href="https://www.linkedin.com/in/dan-prz/">
-					<LinkedIn class = "size-6"></LinkedIn>
+					<LinkedIn class = "size-4 lg:size-6"></LinkedIn>
 					LinkedIn
 				</GroupIcons>
 				<GroupIcons href="https://github.com/Danprz/">
-					<Github class = "size-6"></Github>
+					<Github class = "size-4 lg:size-6"></Github>
 					Github
 				</GroupIcons>
 				<GroupIcons  >
-					<Gmail class = "size-6"></Gmail>
+					<Gmail class = "size-4 lg:size-6"></Gmail>
 					danprz.dev@gmail.com
 				</GroupIcons>
 			</nav>		
 		</SectionContainer>
-		<SectionContainer id = "experiencia">
+		
+		<SectionContainer id = "experiencia" class="py-5" >
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<LaptopIcon class ="size-9"/>
-				Experiencia Laboral :</h2>
+				Experiencia Laboral : </h2>
 			<Experience>
 			</Experience>
+		</SectionContainer>
+		
+		<SectionContainer id= "habilidades" class="py-10 ">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BrainIcon class ="size-9"/>
+				IT Skills :</h2>
+				<Skills></Skills>
+				
+
 		</SectionContainer>
 	</main>
 </Layout>
