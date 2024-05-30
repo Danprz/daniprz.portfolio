@@ -1,6 +1,9 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro'
 import '@fontsource-variable/roboto-mono';
+import '@fontsource/poppins';
+import '@fontsource/roboto';
 
 interface Props {
 	title: string;
@@ -31,6 +34,7 @@ const { description, title } = Astro.props;
 
     <Header></Header>
 		<slot />
+    <Footer />
  
 		<style is:global>
 			:root {
@@ -39,7 +43,7 @@ const { description, title } = Astro.props;
 		
 			html {
 			
-				font-family: 'Roboto Mono Variable', monospace, system-ui, sans-serif;
+				font-family: 'Poppins', 'Roboto Mono Variable', monospace, system-ui, sans-serif;
 				scroll-behavior: smooth;
 			}
 		
