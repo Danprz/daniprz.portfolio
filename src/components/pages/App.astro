@@ -1,0 +1,94 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+import LinkedIn from "../../components/icons/Linkedin.astro"
+import Github from "../../components/icons/Github.astro"
+import GroupIcons from "../../components/icons/GroupIcons.astro"
+import Gmail from "../../components/icons/Gmail.astro"
+import SectionContainer from "../../components/SectionContainer.astro";
+import Experience from "../../components/Experience.astro";
+import LaptopIcon from "../../components/icons/Laptop.astro";
+import BrainIcon from "../../components/icons/Brain.astro";
+import UserIcon from "../../components/icons/User.astro";
+import Skills from "../../components/Skills.astro";
+import AboutMe from "../../components/AboutMe.astro"
+import { getI18N } from "../../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout 
+	title={i18n.seo.title}
+	description={i18n.seo.description}
+>   
+	<main class="px-4">	
+		<SectionContainer class="py-40 pb-32">
+			<div class="flex gap-4 mb-4">
+				<img 
+					class="rounded-lg size-40 object-cover mb-5"
+					src="https://media.licdn.com/dms/image/C4E03AQFs4SxZDyVWbA/profile-displayphoto-shrink_800_800/0/1658314105636?e=1722470400&v=beta&t=xnEpibOwL8PH4wqzo2g99EU5w1WXMaU7PyCpp0bCSE8" 
+					alt="dani" 
+				/>
+				<a 
+						href="https://www.linkedin.com/in/dan-prz/" 
+						target="_blank"
+						rel="noopener"
+						class= "flex items-start transition md:justify-center md:hover:scale-105">
+					<Badge>Open to work</Badge>
+				</a>
+			</div>
+			<h1 class="text-2xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">{i18n.home.welcome}
+				
+			</h1>
+			<h2 class = "text-xl lg:text-2xl opacity-95 text-wrap max-w-[700px] text-pretty">
+			 <span>{i18n.home.years_of_experience}</span> 
+			 <span class="text-green-800 dark:text-green-200/90 font-semibold">{i18n.home.main_paragraph}</span> 
+			 <span>{i18n.home.second_paragraph}</span>
+
+			</h2>
+			<nav class="flex gap-x-2 mt-6">
+				<GroupIcons href="https://www.linkedin.com/in/dan-prz/">
+					<LinkedIn class = "size-4 lg:size-6"></LinkedIn>
+					LinkedIn
+				</GroupIcons>
+				<GroupIcons href="https://github.com/Danprz/">
+					<Github class = "size-4 lg:size-6"></Github>
+					Github
+				</GroupIcons>
+				<GroupIcons href="mailto:danprz.dev@gmail.com"  >
+					<Gmail class = "size-4 lg:size-6"></Gmail>
+					danprz.dev@gmail.com
+				</GroupIcons>
+			</nav>		
+		</SectionContainer>
+		
+		<SectionContainer id = "experiencia" class="py-5" >
+			<h2 class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white">
+				<LaptopIcon class ="size-9"/>
+				Experiencia Laboral : </h2>
+			<Experience>
+			</Experience>
+		</SectionContainer>
+		
+		<SectionContainer id= "habilidades" class="py-10">
+			<h2 class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white">
+				<BrainIcon class ="size-9"/>
+				IT Skills :</h2>
+				<Skills />
+				
+
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi" class="py-10">
+			<h2
+			  class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white"
+			>
+			  <UserIcon class="size-9" />
+			  Sobre mí :
+			</h2>
+			<AboutMe />
+		</SectionContainer>
+	</main>
+</Layout>
+

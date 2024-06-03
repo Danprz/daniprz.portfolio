@@ -1,28 +1,33 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
-import LanguageToggle from '../components/LanguageToggle.astro';
+import LanguageSelector from '../components/LanguageSelector.astro';
+import { getI18N } from "../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const defaultLang = 'fr'
 
 const navItems = [
 
   {
-    title: "Inicio",
-    label: "inicio",
-    url: "/#top",
+    title: i18n.menu.home,
+    label: i18n.menu.home,
+    url:  currentLocale === defaultLang ? "/#top" :`/${currentLocale}/#top`,
   },
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: i18n.menu.experience,
+    label: i18n.menu.experience,
+    url: currentLocale === defaultLang ? "/#experiencia" : `/${currentLocale}/#experiencia`,
   },
   {
-    title: "Tech",
-    label: "habilidade",
-    url: "/#habilidades",
+    title: i18n.menu.skills,
+    label: i18n.menu.skills,
+    url: currentLocale === defaultLang ? "/#habilidades" : `/${currentLocale}/#habilidades`,
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: i18n.menu.about,
+    label: i18n.menu.about,
+    url: currentLocale === defaultLang ? "/#sobre-mi" : `/${currentLocale}/#sobre-mi`,
   }
 ]
 
@@ -50,8 +55,11 @@ const navItems = [
     ))
   }
   <ThemeToggle />
-  
+ 
+  <LanguageSelector />
+
 </nav>
+
 </header>
 
 

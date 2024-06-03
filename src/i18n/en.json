@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "CV Daniel Perez - Data Engineer, Software Développeur avec 3 ans d'expérience",
+    "description": "Daniel Perez Portfolio - Web developer - Python, CSS, JavaScript, SQL, AWS"
+  },
+  "menu": {
+    "home": "Home",
+    "experience": "Experience",
+    "skills": "Tech",
+    "about": "About"
+  },
+  "copyright": "©️ no copyright",
+  "home": {
+    "name": "David Castrillón Gonzales",
+    "role": "Web developer",
+    "status": {
+      "available": "Available"
+    },
+    "welcome" : "Hi, i'm Daniel",
+    "years_of_experience": "Over 3 years of experience.",
+    "main_paragraph": "Data Engineer and Business Intelligence application developer.",
+    "second_paragraph": "Strong problem-solving skills and a Kaizen philosophy. Avid reader, passionate about sustainability and technology.",
+    "social": {
+      "github": "Github",
+      "linkedin": "LinkedIn",
+      "mail": "david.cast27@gmail.com",
+      "download_cv": "Download CV"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "status": {
+      "current": "Present"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "links": {
+      "code": "Code",
+      "web": "Webside"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "first_paragraph": "I am passionate about programming and constantly learning about new technologies. I firmly believe that knowledge is for everyone, and I enjoy collaborative learning and applying what I've learned in the workplace through teaching.",
+    "second_paragraph": "I am someone who enjoys working in a team, loves challenges, and is known for remaining calm when making decisions to help find solutions to problems in a work environment.",
+    "third_paragraph": "Committed to using my experience and knowledge in software quality to improve applications and generate more value for customers."
+  }
+}

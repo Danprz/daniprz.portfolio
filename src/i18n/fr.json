@@ -1,0 +1,49 @@
+{
+    "seo": {
+      "title": "Dani - Data Engineer, Software Développeur avec 3 ans d'expérience",
+      "description": "Porfolio de David Castrillon- Desarrollador Web - HTML, CSS, JavaScript, TypeScript, React"
+    },
+    "menu": {
+      "home": "Accueil",
+      "experience": "Expérience",
+      "skills": "Tech",
+      "about": "À propos"
+    },
+    "copyright": "©️ Aca no reservamos nada",
+    "home": {
+      "name": "David Castrillón Gonzales",
+      "role": "Desarrollador web",
+      "status": {
+        "available": "Disponible"
+      },
+      "welcome" : "Bonjour, c'est Daniel",
+      "years_of_experience": "Plus de 3 ans d'expérience.",
+      "main_paragraph": "Ingénieur Data et développeur d'applications Business Intelligence.",
+      "second_paragraph": "Solides compétences en résolution de problèmes et philosophie Kaizen. Lecteur avide, passionné par la durabilité et la technologie.",
+      "social": {
+        "github": "Github",
+        "linkedin": "LinkedIn",
+        "mail": "david.cast27@gmail.com",
+        "download_cv": "Descargar CV"
+      }
+    },
+    "experience": {
+      "title": "Experiencia laboral",
+      "status": {
+        "current": "Actualmente"
+      }
+    },
+    "projects": {
+      "title": "Proyectos",
+      "links": {
+        "code": "Codigo",
+        "web": "Sitio web"
+      }
+    },
+    "about": {
+      "title": "Sobre mí",
+      "first_paragraph": "Me apasiona la programación y aprender constantemente sobre nuevas tecnologías. Creo firmemente en que el conocimiento es de todos y para todos, por lo cual disfruto del aprendizaje colaborativo y de aplicar lo aprendido en el ámbito laboral a través de la enseñanza.",
+      "second_paragraph": "Soy una persona que disfruta de trabajar en equipo, que le encantan los retos y se caracteriza por estar calmado al momento de tomar decisiones en aras de ayudar a buscar soluciones a los problemas que se presenten en un entorno laboral.",
+      "third_paragraph": "Comprometido en utilizar mi experiencia y conocimiento en la calidad del software para mejorar las aplicaciones, y así generar más valor a los clientes."
+    }
+  }
