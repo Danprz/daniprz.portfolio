@@ -16,8 +16,11 @@
     "@fontsource-variable/roboto-mono": "^5.0.19",
     "@fontsource/poppins": "^5.0.14",
     "@fontsource/roboto": "^5.0.13",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "astro": "^4.9.1",
     "astro-i18next": "^1.0.0-beta.21",
+    "preact": "^10.22.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },

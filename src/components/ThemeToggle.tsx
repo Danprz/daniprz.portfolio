@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'preact/hooks';
 import MoonIcon from "./icons/Moon.astro?raw";
 import SunIcon from "./icons/Sun.astro?raw";
