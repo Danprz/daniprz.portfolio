@@ -3,6 +3,7 @@ import MoonIcon from "./icons/Moon.astro?raw";
 import SunIcon from "./icons/Sun.astro?raw";
 import { Themes } from "../components/constants/theme.constants";
 
+
 export default function ThemeToggle() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? Themes.LIGHT);
   const isLight = theme === Themes.LIGHT
@@ -20,8 +21,8 @@ export default function ThemeToggle() {
     setTheme(isLight ? Themes.DARK : Themes.LIGHT);
   };
  
-  const Icon = isLight ? SunIcon : MoonIcon
-  const classesColor = isLight ? "text-gray-700" : "text-gray-300"
+    const Icon = isLight ? SunIcon : MoonIcon
+    const classesColor = isLight ? "text-gray-700" : "text-gray-300"
 
   return (
     <button class={`hover:transparent size-8 dark:hover:transparent rounded transition hover:scale-110 p-1 border-2 border-transparent dark:border-transparent ${classesColor}`}
