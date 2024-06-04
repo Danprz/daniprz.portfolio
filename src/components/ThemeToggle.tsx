@@ -1,7 +1,8 @@
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from 'preact/hooks';
 import MoonIcon from "./icons/Moon.astro?raw";
 import SunIcon from "./icons/Sun.astro?raw";
 import { Themes } from "../components/constants/theme.constants";
+
 
 
 export default function ThemeToggle() {
@@ -27,7 +28,8 @@ export default function ThemeToggle() {
   return (
     <button class={`hover:transparent size-8 dark:hover:transparent rounded transition hover:scale-110 p-1 border-2 border-transparent dark:border-transparent ${classesColor}`}
       aria-label="Theme toggle"
-      onClick={handleClick}>
+      onClick={handleClick}
+      >
       <span dangerouslySetInnerHTML={{ __html: Icon }} />
     </button>
   )

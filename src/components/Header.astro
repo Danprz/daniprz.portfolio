@@ -64,7 +64,7 @@ const navItems = [
     <button id="menu-close" aria-label="Close Menu" class="absolute top-4 right-4">
       <!-- Icono para cerrar el menú -->
       <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /> 
       </svg>
     </button>
     {navItems.map((link) => (
@@ -82,14 +82,17 @@ const navItems = [
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
 
+  if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+  }
 
+  if (menuClose && mobileMenu) {
     menuClose.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
     });
@@ -99,7 +102,8 @@ const navItems = [
         mobileMenu.classList.add('hidden');
       });
     });
-  });
+  }
+});
 </script>
 
 <style>
