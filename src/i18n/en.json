@@ -9,13 +9,7 @@
     "skills": "Technologies",
     "about": "About"
   },
-  "copyright": "©️ no copyright",
   "home": {
-    "name": "David Castrillón Gonzales",
-    "role": "Web developer",
-    "status": {
-      "available": "Available"
-    },
     "welcome" : "Hi, i'm Daniel",
     "years_of_experience": "Over 3 years of experience.",
     "main_paragraph": "Data Engineer and Business Intelligence application developer.",

@@ -60,7 +60,7 @@ const navItems = [
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden fixed inset-0 z-20 flex flex-col items-center justify-center bg-gray-800 text-white">
+  <div id="mobile-menu" class="hidden fixed  inset-0 z-20 flex flex-col items-center justify-center bg-gray-800 text-white">
     <button id="menu-close" aria-label="Close Menu" class="absolute top-4 right-4">
       <!-- Icono para cerrar el menú -->
       <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,6 +113,11 @@ const navItems = [
     animation-range: 0 100px;
   }
 
+  div {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
   @keyframes nav-shadown {
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-white/10  bg-white/50 ring-white/10;
