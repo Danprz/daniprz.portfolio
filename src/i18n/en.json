@@ -1,12 +1,12 @@
 {
   "seo": {
-    "title": "CV Daniel Perez - Data Engineer, Software Développeur avec 3 ans d'expérience",
+    "title": "Portfolio Daniel Perez - Data Engineer, Software Développeur avec 3 ans d'expérience",
     "description": "Daniel Perez Portfolio - Web developer - Python, CSS, JavaScript, SQL, AWS"
   },
   "menu": {
     "home": "Home",
     "experience": "Experience",
-    "skills": "Tech",
+    "skills": "Technologies",
     "about": "About"
   },
   "copyright": "©️ no copyright",
@@ -21,29 +21,32 @@
     "main_paragraph": "Data Engineer and Business Intelligence application developer.",
     "second_paragraph": "Strong problem-solving skills and a Kaizen philosophy. Avid reader, passionate about sustainability and technology.",
     "social": {
-      "github": "Github",
-      "linkedin": "LinkedIn",
-      "mail": "david.cast27@gmail.com",
       "download_cv": "Download CV"
     }
   },
   "experience": {
-    "title": "Work Experience",
-    "status": {
-      "current": "Present"
-    }
+    "title": "Work Experience :",
+    "first_date_1": "May",
+    "last_date_1": "Aug",
+    "first_date_2" : "Dec",
+    "experience_1" : "In charge of designing, creating, and optimizing databases. Responsible for developing software and tools that transformed data into valuable and accessible information for people from various departments.",
+    "experience_2" : "During this internship, I analyzed large volumes of data to calculate KPIs, developed and maintained dashboards, and applied machine learning models to predict sales seasonality and create reliable forecasts."
   },
-  "projects": {
-    "title": "Projects",
-    "links": {
-      "code": "Code",
-      "web": "Webside"
-    }
+  "skills": {
+    "title": "IT Skills :"
+    
   },
   "about": {
-    "title": "About me",
-    "first_paragraph": "I am passionate about programming and constantly learning about new technologies. I firmly believe that knowledge is for everyone, and I enjoy collaborative learning and applying what I've learned in the workplace through teaching.",
-    "second_paragraph": "I am someone who enjoys working in a team, loves challenges, and is known for remaining calm when making decisions to help find solutions to problems in a work environment.",
-    "third_paragraph": "Committed to using my experience and knowledge in software quality to improve applications and generate more value for customers."
+    "title": "About me :",
+    "first_paragraph" : "My name is Daniel Pérez and I am from Venezuela. Passionate about nature and with a strong background in the tech industry, I currently work as a data engineer.",
+    "first_paragraph_highlight" : "I am an expert in developing software for data-driven decision making.",
+    "second_paragraph_1": "One of my greatest professional achievements has been",
+    "second_paragraph_1_highlight" : "implementing a data culture",
+    "second_paragraph_2" : "in an industrial company with over 200 employees, ",
+    "second_paragraph_2_highlight" : "improving productivity and decision-making efficiency.",
+    "third_paragraph_1": "Personally, I am deeply interested in the",
+    "third_paragraph_1_highlight" : "balance between mind and body",
+    "third_paragraph_2" : "and constantly apply habits that improve my physical and emotional health. My goal is to reach my maximum",
+    "third_paragraph_2_highlight" : "creative potential to develop tools that help others."
   }
 }

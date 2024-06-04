@@ -1,12 +1,12 @@
 {
     "seo": {
-      "title": "Dani - Data Engineer, Software Développeur avec 3 ans d'expérience",
+      "title": "CV Daniel Perez- Data Engineer, Software Développeur avec 3 ans d'expérience",
       "description": "Porfolio de David Castrillon- Desarrollador Web - HTML, CSS, JavaScript, TypeScript, React"
     },
     "menu": {
       "home": "Accueil",
       "experience": "Expérience",
-      "skills": "Tech",
+      "skills": "Technologies",
       "about": "À propos"
     },
     "copyright": "©️ Aca no reservamos nada",
@@ -21,29 +21,31 @@
       "main_paragraph": "Ingénieur Data et développeur d'applications Business Intelligence.",
       "second_paragraph": "Solides compétences en résolution de problèmes et philosophie Kaizen. Lecteur avide, passionné par la durabilité et la technologie.",
       "social": {
-        "github": "Github",
-        "linkedin": "LinkedIn",
-        "mail": "david.cast27@gmail.com",
-        "download_cv": "Descargar CV"
+        "download_cv": "Telecharger CV"
       }
     },
     "experience": {
-      "title": "Experiencia laboral",
-      "status": {
-        "current": "Actualmente"
-      }
+      "title" : "Expérience professionnelle :",
+      "first_date_1" : "Mai",
+      "last_date_1" : "Août",
+      "first_date_2" : "Déc",
+      "experience_1" : "Chargé de la conception, de la création et de l'optimisation des bases de données. Responsable du développement de logiciels et d'outils qui ont permis de transformer les données en informations précieuses et accessibles pour les personnes de différents services.",
+      "experience_2" : "Lors de ce stage, j'ai analysé de grands volumes de données pour calculer des KPI, développé et maintenu des tableaux de bord, et appliqué des modèles de machine learning pour prévoir la saisonnalité des ventes et créer des prévisions fiables."
     },
-    "projects": {
-      "title": "Proyectos",
-      "links": {
-        "code": "Codigo",
-        "web": "Sitio web"
-      }
+    "skills": {
+      "title": "Compétences Techniques :"
     },
     "about": {
-      "title": "Sobre mí",
-      "first_paragraph": "Me apasiona la programación y aprender constantemente sobre nuevas tecnologías. Creo firmemente en que el conocimiento es de todos y para todos, por lo cual disfruto del aprendizaje colaborativo y de aplicar lo aprendido en el ámbito laboral a través de la enseñanza.",
-      "second_paragraph": "Soy una persona que disfruta de trabajar en equipo, que le encantan los retos y se caracteriza por estar calmado al momento de tomar decisiones en aras de ayudar a buscar soluciones a los problemas que se presenten en un entorno laboral.",
-      "third_paragraph": "Comprometido en utilizar mi experiencia y conocimiento en la calidad del software para mejorar las aplicaciones, y así generar más valor a los clientes."
+      "title": "À propos de moi :",
+      "first_paragraph" : "Je m'appelle Daniel Pérez et je viens du Venezuela. Passionné par la nature et ayant une solide formation dans l'industrie technologique, je travaille actuellement comme ingénieur de données.",
+      "first_paragraph_highlight" : "Je suis expert dans le développement de logiciels pour la prise de décisions basée sur les données.",
+      "second_paragraph_1": "Un de mes plus grands succès professionnels a été de",
+      "second_paragraph_1_highlight" : "déployer une culture data",
+      "second_paragraph_2" : "dans une entreprise industrielle de plus de 200 employés,",
+      "second_paragraph_2_highlight" : "améliorant ainsi la productivité et l'efficacité de la prise de décision.",
+      "third_paragraph_1": "Personnellement, je m'intéresse profondément à",
+      "third_paragraph_1_highlight" : "l'équilibre entre l'esprit et le corps",
+      "third_paragraph_2" : "et j'applique constamment des habitudes qui améliorent ma santé physique et émotionnelle. Mon objectif est d'atteindre mon plein",
+      "third_paragraph_2_highlight" : "potentiel créatif pour développer des outils qui aident les autres."
     }
   }

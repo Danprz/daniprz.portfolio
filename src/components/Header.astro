@@ -1,6 +1,7 @@
 ---
-import ThemeToggle from '../components/ThemeToggle.astro';
+import ThemeToggle from '../components/ThemeToggle';
 import LanguageSelector from '../components/LanguageSelector.astro';
+import MenuIcon from "./icons/MenuIcon.astro";
 import { getI18N } from "../i18n";
 
 const { currentLocale } = Astro;
@@ -30,38 +31,76 @@ const navItems = [
     url: currentLocale === defaultLang ? "/#sobre-mi" : `/${currentLocale}/#sobre-mi`,
   }
 ]
-
-
 ---
 
-
-<header class = "fixed top-0 z-10 flex items-center justify-center py-6 w-full mx-auto mt-2" > 
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
   <span>
-    
+    <!-- Aquí puede ir tu logo o cualquier otro elemento -->  
   </span>
 
-  <nav
-  class="flex gap-x-8 font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
->
-  {
-    navItems.map((link) => (
+  <nav id="menu" class="hidden md:flex gap-x-8 font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
+    {navItems.map((link) => (
       <a
-        class="relative block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"  
+        class="relative block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"
         aria-label={link.label}
         href={link.url}
       >
         {link.title}
       </a>
-    ))
-  }
-  <ThemeToggle />
- 
-  <LanguageSelector />
+    ))}
+    <ThemeToggle client:only />
+    <LanguageSelector />
+  </nav>
 
-</nav>
+  <div class="md:hidden flex items-center gap-4">
+    <ThemeToggle client:only />
+    <LanguageSelector />
+    <button id="menu-toggle" aria-label="Toggle Menu">
+      <MenuIcon />
+    </button>
+  </div>
 
+  <div id="mobile-menu" class="hidden fixed inset-0 z-20 flex flex-col items-center justify-center bg-gray-800 text-white">
+    <button id="menu-close" aria-label="Close Menu" class="absolute top-4 right-4">
+      <!-- Icono para cerrar el menú -->
+      <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    {navItems.map((link) => (
+      <a
+        class="block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"
+        aria-label={link.label}
+        href={link.url}
+      >
+        {link.title}
+      </a>
+    ))}
+    
+  </div>
 </header>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  });
+</script>
 
 <style>
   nav {

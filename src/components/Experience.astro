@@ -1,20 +1,22 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+import { getI18N } from "../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 const EXPERIENCIE = [
   {
-    date: "May 2022 - Aug 2024",
+    date: `${i18n.experience.first_date_1} 2022 - ${i18n.experience.last_date_1} 2024`,
     title: "Data Engineer",
     company: "LOU Legumes",
-    description:
-      "Encargado del diseño, creación y optimización de bases de datos. Responsable del desarrollo de software y herramientas que permitieron transformar los datos en información valiosa y accesible para personas de diferentes servicios.",
+    description: i18n.experience.experience_1,
     link: "",
   },
   {
-    date: "Dec 2021 - May 2022",
+    date: `${i18n.experience.first_date_2} 2021 - ${i18n.experience.first_date_1} 2022`,
     title: "Data Analyst",
     company: "LOU Legumes",
-    description:
-      "Durante estas practicas, analicé grandes volúmenes de datos para calcular KPIs, desarrollé y mantuve dashboards, y apliqué modelos de machine learning para prever la estacionalidad de las ventas y crear previsiones fiables",
+    description: i18n.experience.experience_2
   },
 ]
 ---
