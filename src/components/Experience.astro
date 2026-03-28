@@ -4,28 +4,14 @@ import { getI18N } from "../i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const EXPERIENCIE = [
-  {
-    date: `${i18n.experience.first_date_1} 2022 - ${i18n.experience.last_date_1} 2024`,
-    title: "Data Engineer",
-    company: "LOU Legumes",
-    description: i18n.experience.experience_1,
-    link: "",
-  },
-  {
-    date: `${i18n.experience.first_date_2} 2021 - ${i18n.experience.first_date_1} 2022`,
-    title: "Data Analyst",
-    company: "LOU Legumes",
-    description: i18n.experience.experience_2
-  },
-]
+const experiences = i18n.experience.items;
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    experiences.map((experience) => (
       <li class="">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
         
       </li>
     ))
