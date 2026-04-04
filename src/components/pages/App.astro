@@ -1,95 +1,182 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Badge from "../../components/Badge.astro";
-import LinkedIn from "../../components/icons/Linkedin.astro"
-import Github from "../../components/icons/Github.astro"
-import GroupIcons from "../../components/icons/GroupIcons.astro"
-import Gmail from "../../components/icons/Gmail.astro"
+import LinkedIn from "../../components/icons/Linkedin.astro";
+import Github from "../../components/icons/Github.astro";
+import GroupIcons from "../../components/icons/GroupIcons.astro";
+import Gmail from "../../components/icons/Gmail.astro";
 import SectionContainer from "../../components/SectionContainer.astro";
 import Experience from "../../components/Experience.astro";
 import LaptopIcon from "../../components/icons/Laptop.astro";
 import BrainIcon from "../../components/icons/Brain.astro";
 import UserIcon from "../../components/icons/User.astro";
 import Skills from "../../components/Skills.astro";
-import AboutMe from "../../components/AboutMe.astro"
+import AboutMe from "../../components/AboutMe.astro";
+import ImpactHighlights from "../../components/ImpactHighlights.astro";
+import FeaturedProjects from "../../components/FeaturedProjects.astro";
 import { getI18N } from "../../i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+const heroMetrics = i18n.impact.items.slice(0, 2);
+const primaryCtaClass =
+  "inline-flex items-center justify-center rounded-full border border-emerald-600 bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-emerald-800";
+const secondaryCtaClass =
+  "inline-flex items-center justify-center rounded-full border border-neutral-400 bg-neutral-200/80 px-5 py-3 text-sm font-semibold text-neutral-900 transition hover:-translate-y-0.5 hover:border-neutral-500 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15";
 ---
 
-<Layout 
-	title={i18n.seo.title}
-	description={i18n.seo.description}
->   
-	<main class="px-4">	
-		<SectionContainer class="py-40 pb-20">
-			<div class="flex gap-4 mb-4">
-				<img 
-					class="rounded-lg size-40 object-cover mb-5"
-					src="/1658314105636.jpeg"
-					alt="Foto de perfil de Daniel Perez"
-					onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/69302088?v=4';"
-				/>
-				<a 
-						href="https://www.linkedin.com/in/dan-prz/" 
-						target="_blank"
-						rel="noopener"
-						class= "flex items-start transition md:justify-center md:hover:scale-105">
-					<Badge>Open to work</Badge>
-				</a>
-			</div>
-			<h1 class="text-2xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">{i18n.home.welcome}
-				
-			</h1>
-			<h2 class = "text-xl lg:text-2xl opacity-95 text-wrap max-w-[700px] text-pretty">
-			 <span>{i18n.home.years_of_experience}</span> 
-			 <span class="text-green-800 dark:text-green-200/90 font-semibold">{i18n.home.main_paragraph}</span> 
-			 <span>{i18n.home.second_paragraph}</span>
+<Layout
+  title={i18n.seo.title}
+  description={i18n.seo.description}
+  currentLocale={currentLocale}
+>
+  <main id="top" class="px-4">
+    <SectionContainer class="pb-16 pt-24 lg:pt-28">
+      <div class="grid items-center gap-8 lg:grid-cols-[1.15fr_340px] xl:grid-cols-[1.2fr_360px]">
+        <div class="space-y-5">
+          <Badge>{i18n.home.badge}</Badge>
 
-			</h2>
-			<nav class=" flex flex-wrap gap-x-2 mt-6 lg:mt-8 justify-center md:justify-start "> 
-				<GroupIcons href="https://www.linkedin.com/in/dan-prz/">
-					<LinkedIn class = "size-6 lg:size-6"></LinkedIn>
-					<span class="hidden md:inline text-ms">LinkedIn</span>
-				</GroupIcons>
-				<GroupIcons href="https://github.com/Danprz/">
-					<Github class = "size-6 lg:size-6"></Github>
-					<span class="hidden md:inline text-ms">Github</span>
-				</GroupIcons>
-				<GroupIcons href="mailto:danprz.dev@gmail.com"  >
-					<Gmail class = "size-6 lg:size-6"></Gmail>
-					<span class="hidden md:inline text-ms">danprz.dev@gmail.com</span>
-				</GroupIcons>
-			</nav>		
-		</SectionContainer>
-		
-		<SectionContainer id = "experiencia" class="py-5" >
-			<h2 class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white">
-				<LaptopIcon class ="size-9"/>
-				{i18n.experience.title} </h2>
-			<Experience>
-			</Experience>
-		</SectionContainer>
-		
-		<SectionContainer id= "habilidades" class="py-10">
-			<h2 class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white">
-				<BrainIcon class ="size-9"/>
-				{i18n.skills.title}</h2>
-				<Skills />
-				
+          <div class="space-y-4">
+            <h1 class="max-w-3xl text-[1.7rem] font-semibold leading-[1.08] text-neutral-950 dark:text-white md:text-[2.05rem] lg:text-[2.35rem] xl:text-[2.65rem]">
+              {i18n.home.welcome}
+            </h1>
+            <p
+              set:html={i18n.home.summary}
+              class="max-w-2xl text-base leading-7 text-neutral-700 dark:text-white/75 md:text-lg [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+            />
+            <p
+              set:html={i18n.home.headline}
+              class="max-w-2xl text-base leading-7 text-neutral-700 dark:text-white/75 md:text-lg [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+            />
+            <p
+              set:html={i18n.home.availability}
+              class="max-w-2xl text-sm leading-7 text-neutral-600 dark:text-white/60 [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+            />
+          </div>
 
-		</SectionContainer>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://www.linkedin.com/in/dan-prz/"
+              target="_blank"
+              rel="noopener"
+              class={primaryCtaClass}
+            >
+              {i18n.home.cta_primary}
+            </a>
+            <a href="#projects" class={secondaryCtaClass}>{i18n.home.cta_secondary}</a>
+            <a href="mailto:danprz.dev@gmail.com" class={secondaryCtaClass}>{i18n.home.cta_tertiary}</a>
+          </div>
 
-		<SectionContainer id="sobre-mi" class="py-10">
-			<h2
-			  class="flex items-center mb-6 text-2xl font-semibold gap-x-8 text-black/80 dark:text-white"
-			>
-			  <UserIcon class="size-9" />
-			  {i18n.about.title}
-			</h2>
-			<AboutMe />
-		</SectionContainer>
-		
-	</main>
+          <ul class="flex flex-wrap gap-3">
+            {
+              i18n.home.quick_facts.map((fact) => (
+                <li class="rounded-full border border-neutral-400/80 bg-neutral-200/70 px-4 py-2 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-white/10 dark:text-white/75">
+                  {fact}
+                </li>
+              ))
+            }
+          </ul>
+
+          <nav class="flex flex-wrap gap-2 pt-2">
+            <GroupIcons href="https://www.linkedin.com/in/dan-prz/">
+              <LinkedIn class="size-5 lg:size-5" />
+              <span class="hidden md:inline text-sm">LinkedIn</span>
+            </GroupIcons>
+            <GroupIcons href="https://github.com/Danprz/">
+              <Github class="size-5 lg:size-5" />
+              <span class="hidden md:inline text-sm">GitHub</span>
+            </GroupIcons>
+            <GroupIcons href="mailto:danprz.dev@gmail.com">
+              <Gmail class="size-5 lg:size-5" />
+              <span class="hidden md:inline text-sm">danprz.dev@gmail.com</span>
+            </GroupIcons>
+          </nav>
+        </div>
+
+        <aside class="relative">
+          <div class="absolute inset-0 scale-95 rounded-[2rem] bg-emerald-500/10 blur-3xl dark:bg-emerald-400/10" />
+          <div class="relative mx-auto max-w-[340px] overflow-hidden rounded-[2rem] border border-neutral-300/80 bg-neutral-200/80 p-4 shadow-sm dark:border-white/10 dark:bg-white/10">
+            <img
+              class="aspect-[4/5] w-full rounded-[1.35rem] object-cover shadow-xl"
+              src="/1658314105636.jpeg"
+              alt="Portrait of Daniel Perez"
+              loading="eager"
+            />
+
+            <div class="mt-4 space-y-3">
+              <p class="text-sm leading-6 text-neutral-700 dark:text-white/75">
+                {i18n.home.card_title}
+              </p>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                {
+                  heroMetrics.map((item) => (
+                    <div class="rounded-2xl border border-neutral-300/80 bg-white/75 p-3 dark:border-white/10 dark:bg-black/20">
+                      <p class="text-xl font-semibold tracking-tight text-neutral-950 dark:text-white">
+                        {item.value}
+                      </p>
+                      <p class="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 dark:text-white/45">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="impact" class="py-10">
+      <div class="mb-8 max-w-3xl">
+        <h2 class="text-3xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-4xl">
+          {i18n.impact.title}
+        </h2>
+        <p
+          set:html={i18n.impact.intro}
+          class="mt-4 text-base leading-8 text-green-800/80 dark:text-green-200/75 [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+        />
+      </div>
+      <ImpactHighlights />
+    </SectionContainer>
+
+    <SectionContainer id="experience" class="py-10">
+      <div class="mb-6 flex items-center gap-x-4 text-black/85 dark:text-white">
+        <LaptopIcon class="size-8 text-green-800 dark:text-green-200/90" />
+        <h2 class="text-3xl font-semibold tracking-tight">{i18n.experience.title}</h2>
+      </div>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects" class="py-10">
+      <div class="mb-8 max-w-3xl">
+        <h2 class="text-3xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-4xl">
+          {i18n.projects.title}
+        </h2>
+        <p
+          set:html={i18n.projects.intro}
+          class="mt-4 text-base leading-8 text-green-800/80 dark:text-green-200/75 [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+        />
+      </div>
+      <FeaturedProjects />
+    </SectionContainer>
+
+    <SectionContainer id="skills" class="py-10">
+      <div class="mb-6 flex items-center gap-x-4 text-black/85 dark:text-white">
+        <BrainIcon class="size-8 text-green-800 dark:text-green-200/90" />
+        <h2 class="text-3xl font-semibold tracking-tight">{i18n.skills.title}</h2>
+      </div>
+      <Skills />
+    </SectionContainer>
+
+    <SectionContainer id="about" class="py-10">
+      <div class="mb-6 flex items-center gap-x-4 text-black/85 dark:text-white">
+        <UserIcon class="size-8 text-green-800 dark:text-green-200/90" />
+        <h2 class="text-3xl font-semibold tracking-tight">{i18n.about.title}</h2>
+      </div>
+      <AboutMe />
+    </SectionContainer>
+  </main>
 </Layout>

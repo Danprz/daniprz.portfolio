@@ -1,0 +1,71 @@
+---
+import { getI18N } from "../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const accents = [
+  {
+    background: "linear-gradient(180deg, rgba(16, 185, 129, 0.10), rgba(255, 255, 255, 0.02))",
+    border: "rgba(16, 185, 129, 0.24)"
+  },
+  {
+    background: "linear-gradient(180deg, rgba(59, 130, 246, 0.10), rgba(255, 255, 255, 0.02))",
+    border: "rgba(59, 130, 246, 0.24)"
+  },
+  {
+    background: "linear-gradient(180deg, rgba(249, 115, 22, 0.10), rgba(255, 255, 255, 0.02))",
+    border: "rgba(249, 115, 22, 0.24)"
+  }
+];
+---
+
+<div class="grid gap-5 lg:grid-cols-3">
+  {
+    i18n.projects.items.map((item, index) => {
+      const accent = accents[index % accents.length];
+
+      return (
+        <article
+          class="group relative overflow-hidden rounded-3xl border bg-neutral-200/75 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-neutral-400 dark:bg-white/10 dark:hover:border-white/20"
+          style={`border-color: ${accent.border}; background-image: ${accent.background};`}
+        >
+          <div class="flex h-full flex-col gap-5">
+            <div class="flex flex-wrap gap-2 text-xs font-medium text-neutral-600 dark:text-white/65">
+              <span class="rounded-full border border-neutral-400/70 bg-white/70 px-3 py-1 dark:border-white/10 dark:bg-black/20">
+                {item.company}
+              </span>
+              <span class="rounded-full border border-neutral-400/70 bg-white/70 px-3 py-1 dark:border-white/10 dark:bg-black/20">
+                {item.period}
+              </span>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+                {item.title}
+              </h3>
+              <p class="text-sm leading-6 text-neutral-700 dark:text-white/75">{item.summary}</p>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-300/80 bg-white/70 p-4 dark:border-white/10 dark:bg-black/20">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-white/45">
+                {i18n.projects.outcome_label}
+              </p>
+              <p class="mt-2 text-sm leading-6 text-neutral-700 dark:text-white/80">{item.outcome}</p>
+            </div>
+
+            <ul class="mt-auto flex flex-wrap gap-2">
+              {
+                item.tags.map((tag) => (
+                  <li class="rounded-full border border-neutral-400/70 px-3 py-1 text-xs font-medium text-neutral-700 dark:border-white/10 dark:text-white/70">
+                    {tag}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </article>
+      );
+    })
+  }
+</div>

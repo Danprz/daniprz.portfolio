@@ -5,32 +5,61 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-  <div
-    class="[&>p]:mb-4 [&>p>strong]:text-green-800  dark:[&>p>strong]:text-green-200/90 [&>p>strong]:font-normal text-pretty order-2 md:order-1"
-  >
-    <p>
-        {i18n.about.first_paragraph} <strong
-        >{i18n.about.first_paragraph_highlight}</strong
-      >
-    </p>
-    
+<div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+  <article class="rounded-3xl border border-neutral-300/80 bg-neutral-200/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/10 md:p-8">
+    <p
+      set:html={i18n.about.intro}
+      class="max-w-2xl text-lg font-medium leading-8 text-neutral-900 dark:text-white [&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+    />
 
-    <p>
-        {i18n.about.second_paragraph_1}<strong
-        > {i18n.about.second_paragraph_1_highlight}</strong
-      > {i18n.about.second_paragraph_2} <strong>{i18n.about.second_paragraph_2_highlight}</strong>
-    </p>
+    <div class="mt-6 space-y-4 text-pretty text-base leading-8 text-neutral-700 dark:text-white/75">
+      <p
+        set:html={i18n.about.paragraph_1}
+        class="[&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+      />
+      <p
+        set:html={i18n.about.paragraph_2}
+        class="[&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+      />
+      <p
+        set:html={i18n.about.paragraph_3}
+        class="[&_strong]:font-semibold [&_strong]:text-green-800 dark:[&_strong]:text-green-200/95"
+      />
+    </div>
 
-    <p>
-      {i18n.about.third_paragraph_1} <strong
-        >{i18n.about.third_paragraph_1_highlight}</strong
-      > {i18n.about.third_paragraph_2} 
-      <strong> {i18n.about.third_paragraph_2_highlight} </strong>
-    </p>
-  </div>
-   
-  <img width="230" height="230" src="https://avatars.githubusercontent.com/u/69302088?v=4" 
-  class="order-1 object-cover w-64 h-full p-1 md:order-2  lg:p-2 lg:w-72 aspect-square rounded-2xl bg-neutral-200 dark:bg-white/10  ring-1 ring-neutral-400 dark:ring-white/10 " style="object-position: 80% 80%">
+    <a
+      href="https://www.strava.com/athletes/70519468"
+      target="_blank"
+      rel="noopener"
+      class="mt-6 inline-flex items-center rounded-full border border-green-700/30 bg-green-50 px-4 py-2 text-sm font-semibold text-green-800 transition hover:-translate-y-0.5 hover:bg-green-100 dark:border-green-200/20 dark:bg-green-200/10 dark:text-green-200"
+    >
+      {i18n.about.strava_label}
+    </a>
+  </article>
 
-</article>
+  <aside class="rounded-3xl border border-neutral-300/80 bg-neutral-200/70 p-5 shadow-sm dark:border-white/10 dark:bg-white/10 md:p-6">
+    <img
+      width="320"
+      height="320"
+      src="https://avatars.githubusercontent.com/u/69302088?v=4"
+      alt="Daniel Perez portrait"
+      class="aspect-square w-full rounded-[1.5rem] object-cover object-center ring-1 ring-neutral-300/80 dark:ring-white/10"
+    />
+
+    <div class="mt-5">
+      <h3 class="text-[11px] font-semibold uppercase tracking-[0.24em] text-neutral-500 dark:text-white/45">
+        {i18n.about.focus_title}
+      </h3>
+      <ul class="mt-4 space-y-3">
+        {
+          i18n.about.focus_items.map((item) => (
+            <li class="flex items-start gap-3 text-sm leading-7 text-neutral-700 dark:text-white/75">
+              <span class="mt-2 h-2 w-2 rounded-full bg-green-700 dark:bg-green-200/90" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </aside>
+</div>
