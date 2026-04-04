@@ -6,42 +6,47 @@ import { getI18N } from "../i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-const defaultLang = 'fr'
+const defaultLang = 'fr';
+const locale = currentLocale ?? defaultLang;
+const localeBase = locale === defaultLang ? "" : `/${locale}`;
 
 const navItems = [
-
   {
     title: i18n.menu.home,
     label: i18n.menu.home,
-    url:  currentLocale === defaultLang ? "/#top" :`/${currentLocale}/#top`,
+    url: `${localeBase}/#top`,
   },
   {
     title: i18n.menu.experience,
     label: i18n.menu.experience,
-    url: currentLocale === defaultLang ? "/#experiencia" : `/${currentLocale}/#experiencia`,
+    url: `${localeBase}/#experience`,
+  },
+  {
+    title: i18n.menu.projects,
+    label: i18n.menu.projects,
+    url: `${localeBase}/#projects`,
   },
   {
     title: i18n.menu.skills,
     label: i18n.menu.skills,
-    url: currentLocale === defaultLang ? "/#habilidades" : `/${currentLocale}/#habilidades`,
+    url: `${localeBase}/#skills`,
   },
   {
     title: i18n.menu.about,
     label: i18n.menu.about,
-    url: currentLocale === defaultLang ? "/#sobre-mi" : `/${currentLocale}/#sobre-mi`,
+    url: `${localeBase}/#about`,
   }
-]
+];
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
-  <span>
-    <!-- Aquí puede ir tu logo o cualquier otro elemento -->  
-  </span>
-
-  <nav id="menu" class="hidden md:flex gap-x-8 font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
+<header class="fixed top-0 z-20 flex w-full items-center justify-center px-4 pt-3">
+  <nav
+    id="menu"
+    class="hidden items-center gap-x-6 rounded-full border border-neutral-300/80 bg-white/70 px-5 py-2 text-sm font-medium text-gray-700 shadow-sm backdrop-blur md:flex dark:border-white/10 dark:bg-black/25 dark:text-gray-200"
+  >
     {navItems.map((link) => (
       <a
-        class="relative block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"
+        class="relative block py-2 transition hover:text-green-800 dark:hover:text-green-200/90"
         aria-label={link.label}
         href={link.url}
       >
@@ -52,7 +57,10 @@ const navItems = [
     <LanguageSelector />
   </nav>
 
-  <div class="md:hidden flex items-center gap-4">
+  <div
+    id="mobile-toolbar"
+    class="flex items-center gap-3 rounded-full border border-neutral-300/80 bg-white/80 px-4 py-2 text-gray-700 shadow-sm backdrop-blur md:hidden dark:border-white/10 dark:bg-black/25 dark:text-gray-200"
+  >
     <ThemeToggle client:only />
     <LanguageSelector />
     <button id="menu-toggle" aria-label="Toggle Menu">
@@ -60,67 +68,65 @@ const navItems = [
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden fixed  inset-0 z-20 flex flex-col items-center justify-center bg-gray-500 text-neutral-950">
-    <button id="menu-close" aria-label="Close Menu" class="absolute top-4 right-4">
-      <!-- Icono para cerrar el menú -->
-      <svg class="h-8 w-8 text-neutral-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /> 
+  <div
+    id="mobile-menu"
+    class="hidden fixed inset-0 z-30 flex flex-col items-center justify-center gap-6 bg-neutral-100/95 text-neutral-950 backdrop-blur dark:bg-slate-950/95 dark:text-white"
+  >
+    <button id="menu-close" aria-label="Close Menu" class="absolute right-4 top-4">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
     {navItems.map((link) => (
       <a
-        class="block px-2 py-2 transition hover:text-green-800 dark:hover:text-green-200/90"
+        class="block px-2 py-2 text-xl font-medium transition hover:text-green-800 dark:hover:text-green-200/90"
         aria-label={link.label}
         href={link.url}
       >
         {link.title}
       </a>
     ))}
-    
   </div>
 </header>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuClose = document.getElementById('menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
-  if (menuClose && mobileMenu) {
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    if (menuClose && mobileMenu) {
+      menuClose.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
-    });
-  }
-});
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  });
 </script>
 
 <style>
-  nav {
-    animation: nav-shadown 1s linear both;
+  #menu,
+  #mobile-toolbar {
+    animation: nav-shadow 1s linear both;
     animation-timeline: scroll();
-    animation-range: 0 100px;
+    animation-range: 0 120px;
   }
 
-  div {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-  @keyframes nav-shadown {
+  @keyframes nav-shadow {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-white/10  bg-white/50 ring-white/10;
+      box-shadow: 0 18px 40px -26px rgba(15, 23, 42, 0.45);
+      transform: translateY(2px);
     }
   }
 </style>

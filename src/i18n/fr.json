@@ -1,25 +1,62 @@
 {
   "seo": {
-    "title": "CV Daniel Perez - Lead Data Engineer avec plus de 5 ans d'expérience",
-    "description": "Daniel Perez Portfolio - Lead Data Engineer spécialisé en Azure, Databricks, pipelines data et architecture cloud"
+    "title": "Daniel Perez | Lead Data Engineer | Azure, Databricks et Plateformes Analytics",
+    "description": "Lead Data Engineer basé en France. Je conçois des plateformes data sur Azure + Databricks, des pipelines fiables et des fondations analytics utiles pour les métiers."
   },
   "menu": {
     "home": "Accueil",
     "experience": "Expérience",
-    "skills": "Technologies",
+    "projects": "Cas d'usage",
+    "skills": "Stack",
     "about": "À propos"
   },
   "home": {
     "welcome": "Bonjour, c'est Daniel",
-    "years_of_experience": "Plus de 5 ans d'expérience.",
-    "main_paragraph": "Lead Data Engineer spécialisé en plateforme data cloud, analytics et pipelines fiables.",
-    "second_paragraph": "Solides compétences en résolution de problèmes et philosophie Kaizen. Lecteur assidu, passionné par la durabilité et la technologie.",
+    "badge": "Lead Data Engineer basé en France",
+    "headline": "Je construis des <strong>plateformes data sur Azure + Databricks</strong> qui transforment des <strong>données fragmentées</strong> en <strong>décisions fiables</strong>.",
+    "summary": "<strong>Plus de 5 ans d'expérience</strong> sur les <strong>plateformes cloud</strong>, les <strong>pipelines d'ingestion</strong>, l'analytics enablement et la livraison de produits data dans des environnements industriels.",
+    "availability": "Ouvert aux échanges sur des <strong>rôles senior et lead</strong> autour des data platforms, avec une forte <strong>capacité d'adaptation</strong> et un vrai <strong>travail d'équipe</strong>.",
+    "quick_facts": [
+      "Azure + Databricks",
+      "Plateformes data industrielles",
+      "Adaptabilité & esprit d'équipe"
+    ],
+    "card_title": "Focalisé sur la fiabilité de plateforme, l'adoption analytics et la maintenabilité long terme.",
+    "cta_primary": "Voir LinkedIn",
+    "cta_secondary": "Voir les cas",
+    "cta_tertiary": "Me contacter",
     "social": {
       "download_cv": "Télécharger CV"
     }
   },
+  "impact": {
+    "title": "Quand la plateforme data devient un levier métier",
+    "intro": "J'apporte le plus de valeur lorsqu'une entreprise a besoin de <strong>fondations cloud solides</strong>, de <strong>pipelines fiables</strong> et de <strong>produits analytics réellement utiles</strong> aux équipes métier.",
+    "items": [
+      {
+        "value": "5+ ans",
+        "label": "Delivery data et analytics",
+        "detail": "Du reporting et forecasting jusqu'à la conception et l'industrialisation de plateformes data cloud."
+      },
+      {
+        "value": "500+",
+        "label": "Collaborateurs concernés",
+        "detail": "J'ai aidé à rendre la donnée opérationnelle plus accessible et plus utile pour plusieurs équipes métier."
+      },
+      {
+        "value": "Azure + Databricks",
+        "label": "Stack principal actuel",
+        "detail": "Pratique des patterns de plateforme cloud, de l'ingestion avec ADF, des workloads Spark et de l'activation BI."
+      },
+      {
+        "value": "Forte adaptabilité",
+        "label": "Travail en équipe",
+        "detail": "Capable de m'intégrer rapidement à de nouveaux contextes, de collaborer avec des équipes variées et de faire avancer les sujets collectivement."
+      }
+    ]
+  },
   "experience": {
-    "title": "Expérience professionnelle :",
+    "title": "Expérience professionnelle",
     "items": [
       {
         "date": "2024 - Aujourd'hui",
@@ -43,7 +80,7 @@
           "Concevoir et optimiser des modèles de données et des bases pour rendre les données opérationnelles accessibles aux équipes métier.",
           "Développer des outils data et BI transformant des données dispersées en KPI fiables et en insights actionnables.",
           "Contribuer à l'installation d'une culture data dans un environnement industriel de plus de 200 collaborateurs.",
-          "Traduire les besoins des différents services en solutions analytiques maintenables, utiles à la prise de décision."
+          "Traduire les besoins des différents services en solutions analytiques maintenables et utiles à la prise de décision."
         ]
       },
       {
@@ -55,25 +92,66 @@
           "Analyser de grands volumes de données afin de construire et suivre des KPI de ventes et d'opérations.",
           "Développer et maintenir des tableaux de bord permettant de piloter la performance business au quotidien.",
           "Appliquer des modèles de machine learning pour anticiper la saisonnalité des ventes et fiabiliser les prévisions.",
-          "Transformer les analyses exploratoires en reportings utiles pour les équipes métier."
+          "Transformer les analyses exploratoires en livrables analytics réellement exploitables par les équipes métier."
         ]
       }
     ]
   },
+  "projects": {
+    "title": "Projets principaux",
+    "intro": "Quelques projets représentatifs de mon approche entre <strong>plateforme data</strong>, <strong>analytics</strong> et <strong>usages métier</strong>.",
+    "outcome_label": "Pourquoi c'est important",
+    "items": [
+      {
+        "title": "Industrialisation d'une Plateforme Cloud",
+        "company": "Emotors",
+        "period": "2024 - Aujourd'hui",
+        "summary": "J'ai contribué à structurer la plateforme cible autour d'Azure, Databricks et Azure Data Factory, en passant de l'exploration à une base plus industrialisée.",
+        "outcome": "Alignement des patterns d'ingestion, des standards de fiabilité et des choix de compute avec les besoins BI et la croissance long terme de la plateforme.",
+        "tags": ["Azure", "Databricks", "ADF", "Spark", "Data Platform"]
+      },
+      {
+        "title": "Culture Data Opérationnelle à l'Échelle",
+        "company": "LOU Legumes",
+        "period": "2022 - 2024",
+        "summary": "J'ai transformé des données opérationnelles fragmentées en KPI partagés, bases accessibles et actifs BI maintenables pour plusieurs équipes d'une entreprise industrielle.",
+        "outcome": "Une donnée plus utile pour la prise de décision et une culture data plus forte dans un environnement de plus de 200 collaborateurs.",
+        "tags": ["BI", "KPI", "Modélisation", "Stakeholders", "Industrie"]
+      },
+      {
+        "title": "Fondations Forecasting et Reporting",
+        "company": "LOU Legumes",
+        "period": "2021 - 2022",
+        "summary": "J'ai posé les bases du reporting et du forecasting pour suivre la performance business et mieux anticiper la saisonnalité des ventes.",
+        "outcome": "Livraison de dashboards et d'analyses qui ont amélioré la visibilité pour la planification et l'opérationnel.",
+        "tags": ["Forecasting", "Dashboards", "KPI", "Analytics", "Machine Learning"]
+      }
+    ]
+  },
   "skills": {
-    "title": "Compétences Techniques :"
+    "title": "Stack principal"
   },
   "about": {
-    "title": "À propos de moi :",
-    "first_paragraph": "Je m'appelle Daniel Perez et je viens du Venezuela. Passionné par la nature et avec une solide expérience dans l'industrie technologique, je travaille actuellement comme Lead Data Engineer.",
-    "first_paragraph_highlight": "Je conçois des plateformes data cloud et des solutions analytiques qui rendent la décision data-driven plus fiable et plus exploitable.",
-    "second_paragraph_1": "Un de mes plus grands succès professionnels a été de",
-    "second_paragraph_1_highlight": "déployer une culture data",
-    "second_paragraph_2": "dans une entreprise industrielle de plus de 200 employés,",
-    "second_paragraph_2_highlight": "améliorant ainsi la productivité et l'efficacité de la prise de décision.",
-    "third_paragraph_1": "Personnellement, je m'intéresse profondément à",
-    "third_paragraph_1_highlight": "l'équilibre entre l'esprit et le corps",
-    "third_paragraph_2": "et j'applique constamment des habitudes qui améliorent ma santé physique et émotionnelle. Mon objectif est d'atteindre mon plein",
-    "third_paragraph_2_highlight": "potentiel créatif pour développer des outils qui aident les autres."
+    "title": "Ma façon de travailler",
+    "intro": "Je travaille à l'intersection entre <strong>profondeur technique</strong> et <strong>utilité réelle pour le métier</strong>.",
+    "paragraph_1": "Mon objectif est de concevoir des <strong>plateformes data</strong> auxquelles les équipes peuvent faire confiance : <strong>ingestion fiable</strong>, <strong>transformations maintenables</strong>, <strong>compute scalable</strong> et <strong>ownership clair</strong>.",
+    "paragraph_2": "Je suis particulièrement utile lorsqu'une entreprise a besoin à la fois de <strong>rigueur technique</strong> et de <strong>vision produit</strong>, surtout quand <strong>BI</strong>, <strong>opérations</strong> et <strong>ingénierie</strong> doivent s'aligner sur les mêmes décisions de plateforme.",
+    "paragraph_3": "En dehors du travail, je m'intéresse à la <strong>durabilité</strong> et à la <strong>lecture</strong>, et je suis particulièrement passionné par <strong>l'escalade</strong> et <strong>la course à pied</strong>.",
+    "strava_label": "Voir mon Strava",
+    "focus_title": "Ce que j'apporte à une équipe",
+    "focus_items": [
+      "Des patterns d'ingestion et de transformation fiables",
+      "Des décisions de plateforme alignées avec des cas d'usage métier",
+      "Des fondations analytics maintenables, pas des correctifs ponctuels",
+      "Une forte capacité d'adaptation et un vrai sens du travail en équipe"
+    ]
+  },
+  "footer": {
+    "eyebrow": "Ouvert à la discussion",
+    "title": "Daniel Perez · Lead Data Engineer",
+    "subtitle": "Si vous cherchez quelqu'un capable de relier <strong>ingénierie data</strong> et <strong>impact analytics</strong>, échangeons.",
+    "contact": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
   }
 }
