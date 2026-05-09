@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Badge from "../../components/Badge.astro";
-import LinkedIn from "../../components/icons/Linkedin.astro";
 import Github from "../../components/icons/Github.astro";
 import GroupIcons from "../../components/icons/GroupIcons.astro";
 import Gmail from "../../components/icons/Gmail.astro";
@@ -21,9 +20,9 @@ const i18n = getI18N({ currentLocale });
 
 const heroMetrics = i18n.impact.items.slice(0, 2);
 const primaryCtaClass =
-  "inline-flex items-center justify-center rounded-full border border-emerald-600 bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-emerald-800";
+  "inline-flex min-h-12 min-w-[150px] items-center justify-center rounded-xl border border-emerald-700 bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-emerald-800";
 const secondaryCtaClass =
-  "inline-flex items-center justify-center rounded-full border border-neutral-400 bg-neutral-200/80 px-5 py-3 text-sm font-semibold text-neutral-900 transition hover:-translate-y-0.5 hover:border-neutral-500 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15";
+  "inline-flex min-h-12 min-w-[150px] items-center justify-center rounded-xl border border-neutral-300 bg-white/70 px-5 py-3 text-sm font-semibold text-neutral-900 shadow-sm shadow-neutral-900/5 transition hover:-translate-y-0.5 hover:border-neutral-400 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15";
 ---
 
 <Layout
@@ -55,7 +54,7 @@ const secondaryCtaClass =
             />
           </div>
 
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-3 pt-1">
             <a
               href="https://www.linkedin.com/in/dan-prz/"
               target="_blank"
@@ -71,18 +70,14 @@ const secondaryCtaClass =
           <ul class="flex flex-wrap gap-3">
             {
               i18n.home.quick_facts.map((fact) => (
-                <li class="rounded-full border border-neutral-400/80 bg-neutral-200/70 px-4 py-2 text-sm font-medium text-neutral-700 dark:border-white/10 dark:bg-white/10 dark:text-white/75">
+                <li class="rounded-lg border border-emerald-900/10 bg-emerald-900/[0.04] px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-900/80 dark:border-emerald-200/10 dark:bg-emerald-200/[0.06] dark:text-emerald-100/75">
                   {fact}
                 </li>
               ))
             }
           </ul>
 
-          <nav class="flex flex-wrap gap-2 pt-2">
-            <GroupIcons href="https://www.linkedin.com/in/dan-prz/">
-              <LinkedIn class="size-5 lg:size-5" />
-              <span class="hidden md:inline text-sm">LinkedIn</span>
-            </GroupIcons>
+          <nav class="flex flex-wrap items-center gap-2 pt-1" aria-label="Profils et contact">
             <GroupIcons href="https://github.com/Danprz/">
               <Github class="size-5 lg:size-5" />
               <span class="hidden md:inline text-sm">GitHub</span>
